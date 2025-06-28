@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innerverse 🌌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Innerverse 🌌</h1>
+
+    <!-- Mood Tracker -->
+    <section class="section mood">
+      <h2>🎭 How Are You Feeling Today?</h2>
+      <div class="mood-options">
+        <button onclick="setMood('😊')">😊</button>
+        <button onclick="setMood('😔')">😔</button>
+        <button onclick="setMood('😡')">😡</button>
+        <button onclick="setMood('😌')">😌</button>
+        <button onclick="setMood('😢')">😢</button>
+      </div>
+      <p id="mood-result"></p>
+    </section>
+
+    <!-- Reflection Prompt -->
+    <section class="section reflection">
+      <h2>💭 Daily Reflection Prompt</h2>
+      <p id="prompt">Click below to reflect</p>
+      <button onclick="newPrompt()">Show Prompt</button>
+    </section>
+
+    <!-- Whisper a Secret -->
+    <section class="section secret">
+      <h2>🔐 Whisper a Secret</h2>
+      <textarea id="userSecret" rows="3" placeholder="Type your secret..."></textarea>
+      <button onclick="sendSecret()">Release Secret</button>
+      <p id="randomSecret"></p>
+    </section>
+
+    <!-- Affirmation Drawer -->
+    <section class="section affirm">
+      <h2>💖 Need a Little Hope?</h2>
+      <button onclick="showAffirmation()">Show Affirmation</button>
+      <p id="affirmation"></p>
+    </section>
+
+    <!-- Journal Area -->
+    <section class="section journal">
+      <h2>📝 Write Your Thoughts</h2>
+      <textarea id="journalBox" rows="6" placeholder="Write freely..."></textarea>
+      <button onclick="saveJournal()">Save Locally</button>
+      <p id="saveStatus"></p>
+    </section>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/22/audio_4b0f9336d3.mp3" type="audio/mp3">
+  </audio>
+  <button class="play-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
