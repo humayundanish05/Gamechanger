@@ -109,4 +109,46 @@ function resetTimer() {
   audio.pause();
   audio.currentTime = 0;
                                       }
+const tracks = ["music1.mp3", "music2.mp3", "music3.mp3"];
+let currentTrack = 0;
+
+const audio = document.getElementById("bgMusic");
+const trackName = document.getElementById("trackName");
+const volumeSlider = document.getElementById("volumeControl");
+
+volumeSlider.addEventListener("input", () => {
+  audio.volume = volumeSlider.value;
+});
+
+function loadTrack(index) {
+  audio.src = tracks[index];
+  trackName.textContent = tracks[index];
+  audio.load();
+}
+
+function playMusic() {
+  if (!audio.src) loadTrack(currentTrack);
+  audio.play();
+}
+
+function pauseMusic() {
+  audio.pause();
+}
+
+function stopMusic() {
+  audio.pause();
+  audio.currentTime = 0;
+}
+
+function nextTrack() {
+  currentTrack = (currentTrack + 1) % tracks.length;
+  loadTrack(currentTrack);
+  playMusic();
+}
+
+function prevTrack() {
+  currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrack);
+  playMusic();
+}
     
