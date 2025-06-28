@@ -23,7 +23,20 @@
       </div>
       <p id="mood-result"></p>
     </section>
+<div class="music-controls">
+    <h2>🎵 Now Playing: <span id="trackName">None</span></h2>
+    <button onclick="prevTrack()">⏮️ Previous</button>
+    <button onclick="playMusic()">▶️ Play</button>
+    <button onclick="pauseMusic()">⏸️ Pause</button>
+    <button onclick="stopMusic()">⏹️ Stop</button>
+    <button onclick="nextTrack()">⏭️ Next</button>
+    <br><br>
+    Volume: <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+  </div>
 
+  <audio id="bgMusic" preload="auto"></audio>
+
+  <script src="script.js"></script>
 ...
 <!-- Music Player (Fixed) -->
 <audio id="bgMusic" loop>
